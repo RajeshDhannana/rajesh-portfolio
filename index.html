@@ -4,16 +4,12 @@
   <title>Rajesh Dhannana | QA Automation Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="QA Automation Engineer with 3+ years experience in Selenium, Tosca, API Testing">
-  <meta name="keywords" content="Selenium, Tosca, QA Engineer, Automation Testing, API Testing, TestNG, Java">
-
   <style>
     :root {
       --bg: #0f172a;
       --text: #e2e8f0;
       --card: #1e293b;
       --accent: #38bdf8;
-      --border: #334155;
     }
 
     body.light {
@@ -27,34 +23,40 @@
       font-family: 'Segoe UI', sans-serif;
       background: var(--bg);
       color: var(--text);
-      transition: 0.3s;
     }
 
     nav {
       display: flex;
       justify-content: space-between;
       padding: 15px 20px;
-      position: sticky;
-      top: 0;
       background: var(--bg);
     }
 
-    nav h2 { color: var(--accent); }
-
-    nav button {
-      background: var(--card);
-      border: 1px solid var(--border);
-      color: var(--text);
-      padding: 6px 12px;
-      border-radius: 6px;
+    .menu-btn {
+      font-size: 20px;
       cursor: pointer;
-      font-size: 16px;
+    }
+
+    .menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      right: 20px;
+      top: 60px;
+      background: var(--card);
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .menu a {
+      color: var(--text);
+      padding: 5px 0;
+      text-decoration: none;
     }
 
     .hero {
       text-align: center;
-      padding: 50px 20px;
-      background: linear-gradient(135deg,#020617,#0f172a);
+      padding: 40px;
     }
 
     .hero img {
@@ -65,48 +67,27 @@
 
     .hero span { color: var(--accent); }
 
-    .btn {
-      display:inline-block;
-      margin-top:15px;
-      padding:10px 20px;
-      background: var(--accent);
-      color:black;
-      border-radius:8px;
-      text-decoration:none;
-      font-weight:bold;
-    }
-
     section {
-      padding: 30px 20px;
+      padding: 25px;
       max-width: 900px;
       margin: auto;
-    }
-
-    h2 {
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 5px;
-    }
-
-    .skills span {
-      background: var(--card);
-      padding: 8px 12px;
-      margin: 5px;
-      display: inline-block;
-      border-radius: 8px;
     }
 
     .card {
       background: var(--card);
       padding: 15px;
       margin-top: 10px;
-      border-radius: 10px;
+      border-radius: 8px;
     }
 
-    ul { padding-left: 20px; }
-
-    .link {
-      color: var(--accent);
+    .btn {
+      padding: 10px 15px;
+      background: var(--accent);
+      color: black;
+      border-radius: 6px;
       text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -114,100 +95,107 @@
 <body>
 
 <nav>
-  <h2>Rajesh</h2>
-  <button id="themeBtn" onclick="toggleMode()">🌙</button>
+  <h3>Rajesh</h3>
+  <div>
+    <span class="menu-btn" onclick="toggleMenu()">☰</span>
+  </div>
 </nav>
 
-<!-- HERO -->
+<div id="menu" class="menu">
+  <a href="#summary">Summary</a>
+  <a href="#skills">Skills</a>
+  <a href="#experience">Experience</a>
+  <a href="#education">Education</a>
+  <a href="#contact">Contact</a>
+</div>
+
 <div class="hero">
   <img src="03.jpg">
   <h1>Rajesh <span>Dhannana</span></h1>
-  <h3>QA Automation Engineer | Selenium | Tosca | API Testing</h3>
-  <p>3+ Years Experience | Accenture</p>
-  <a href="#contact" class="btn">Hire Me</a>
+  <p>QA Automation Engineer</p>
+  <p><b>Looking for opportunities</b></p>
 </div>
 
-<section>
-  <h2>Professional Summary</h2>
+<section id="summary">
+  <h2>Summary</h2>
   <p>
-    QA Automation Engineer with 3+ years of experience in Manual and Automation Testing.
-    Skilled in Selenium WebDriver, Tosca, API Testing, TestNG, and Agile methodologies.
+    QA Automation Engineer with 3+ years of experience in manual and automation testing.
+    Skilled in Selenium, Tosca, API testing, and Agile practices. Experienced in designing 
+    test cases, executing automation frameworks, and ensuring application quality. 
+    Holds certifications in Microsoft Azure Fundamentals (AZ-900) and GitHub Actions (GH-300).
   </p>
 </section>
 
-<section>
-  <h2>Technical Skills</h2>
-  <div class="skills">
-    <span>Selenium WebDriver</span>
-    <span>Tosca Automation</span>
-    <span>Java</span>
-    <span>TestNG</span>
-    <span>API Testing (Postman)</span>
-    <span>Azure DevOps</span>
-    <span>JIRA</span>
-    <span>SQL</span>
-  </div>
+<section id="skills">
+  <h2>Automation Tools</h2>
+  <div class="card">Selenium WebDriver, Tosca, Postman</div>
+
+  <h2>Programming Languages</h2>
+  <div class="card">Java</div>
+
+  <h2>Test Management Tools</h2>
+  <div class="card">JIRA, Azure DevOps</div>
 </section>
 
-<section>
-  <h2>Professional Experience</h2>
+<section id="experience">
+  <h2>Experience</h2>
   <div class="card">
     <h3>Accenture | Test Analyst</h3>
-    <p>Nov 2022 – Present</p>
+    <p>Nov 2022 - Present</p>
     <ul>
-      <li>Automation using Selenium & Tosca</li>
-      <li>API testing using Postman</li>
-      <li>Regression & Cross-browser testing</li>
-      <li>Defect tracking using JIRA & Azure DevOps</li>
+      <li>Worked on Selenium and Tosca automation</li>
+      <li>Performed API testing using Postman</li>
+      <li>Handled defect tracking using JIRA</li>
+      <li>Worked in Agile environment</li>
     </ul>
   </div>
 </section>
 
 <section>
   <h2>Projects</h2>
-
   <div class="card">
-    <h3>Pfizer F&BO MAPP</h3>
-    <p>Selenium Automation for travel and event management system</p>
+    Pfizer F&BO MAPP – Selenium Automation Project
   </div>
-
   <div class="card">
-    <h3>AIOC Init</h3>
-    <p>Tosca Automation for internal applications</p>
+    AIOC Init – Tosca Automation Project
   </div>
 </section>
 
 <section>
   <h2>Certifications</h2>
   <div class="card">
-    Tosca Automation Specialist Level 1 & Level 2
+    Microsoft Azure Fundamentals (AZ-900)<br>
+    GitHub Actions Certification (GH-300)<br>
+    Tosca Automation Specialist Level 1 & 2
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="card">
+    B.Sc Computer Science (2019–2022)
   </div>
 </section>
 
 <section id="contact">
-  <h2>Contact</h2>
+  <h2>Get in Touch</h2>
   <p>Email: rajeshdhannana2001@gmail.com</p>
   <p>Phone: +91 8106164762</p>
 
   <p>
     LinkedIn:
-    <a class="link" href="https://www.linkedin.com/in/dhannana-rajesh-985797224" target="_blank">
+    <a href="https://www.linkedin.com/in/dhannana-rajesh-985797224" target="_blank">
       Rajesh Dhannana
     </a>
   </p>
+
+  <a class="btn" href="mailto:rajeshdhannana2001@gmail.com">Send Email</a>
 </section>
 
 <script>
-const btn = document.getElementById("themeBtn");
-
-function toggleMode() {
-  document.body.classList.toggle("light");
-
-  if (document.body.classList.contains("light")) {
-    btn.textContent = "☀️";
-  } else {
-    btn.textContent = "🌙";
-  }
+function toggleMenu() {
+  var menu = document.getElementById("menu");
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
 }
 </script>
 
