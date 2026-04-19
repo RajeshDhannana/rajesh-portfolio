@@ -63,7 +63,6 @@
       cursor: pointer;
     }
 
-    /* MENU ANIMATION */
     .menu {
       display: flex;
       flex-direction: column;
@@ -72,7 +71,6 @@
       width: 100%;
       background: var(--card);
       z-index: 1500;
-      overflow-y: auto;
       transform: translateY(-100%);
       transition: transform 0.3s ease;
     }
@@ -88,10 +86,6 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .menu a:hover {
-      background: var(--border);
-    }
-
     .hero {
       text-align: center;
       padding: 40px;
@@ -101,11 +95,36 @@
       width: 140px;
       border-radius: 50%;
       border: 3px solid var(--accent);
+    }
+
+    .hero span {
+      color: var(--accent);
+    }
+
+    /* HIGHLIGHT STATS */
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .stat-box {
+      background: var(--card);
+      padding: 15px;
+      border-radius: 10px;
+      width: 30%;
+      border: 1px solid var(--border);
       transition: transform 0.3s;
     }
 
-    .hero img:hover {
-      transform: scale(1.05);
+    .stat-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .stat-box i {
+      font-size: 24px;
+      color: var(--accent);
     }
 
     section {
@@ -122,9 +141,9 @@
       transform: translateY(0);
     }
 
-    h2 {
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 5px;
+    h2 i {
+      margin-right: 10px;
+      color: var(--accent);
     }
 
     .card {
@@ -148,15 +167,6 @@
       text-decoration: none;
       display: inline-block;
       margin-top: 10px;
-      transition: transform 0.2s;
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
-    }
-
-    .icon {
-      margin-right: 8px;
     }
   </style>
 </head>
@@ -182,55 +192,62 @@
 
 <div class="hero">
   <img src="03.jpg">
-  <h1>Rajesh <span style="color: var(--accent)">Dhannana</span></h1>
+  <h1>Rajesh <span>Dhannana</span></h1>
   <p>QA Automation Engineer</p>
   <p><b>Looking for opportunities</b></p>
+
+  <a class="btn" href="resume.pdf" download>
+    <i class="fa-solid fa-download"></i> Download Resume
+  </a>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat-box">
+    <i class="fa-solid fa-briefcase"></i>
+    <h3>3+ Years</h3>
+    <p>Experience</p>
+  </div>
+  <div class="stat-box">
+    <i class="fa-solid fa-certificate"></i>
+    <h3>2+</h3>
+    <p>Certifications</p>
+  </div>
+  <div class="stat-box">
+    <i class="fa-solid fa-diagram-project"></i>
+    <h3>Automation</h3>
+    <p>Projects</p>
+  </div>
 </div>
 
 <section id="summary">
-  <h2>Summary</h2>
+  <h2><i class="fa-solid fa-user"></i>Summary</h2>
   <p>QA Automation Engineer with 3+ years experience in Selenium, Tosca, API testing and Agile.</p>
 </section>
 
 <section id="skills">
-  <h2>Automation Tools</h2>
-  <div class="card">Selenium, Tosca, Postman</div>
-
-  <h2>Programming Languages</h2>
-  <div class="card">Java</div>
-
-  <h2>Test Management Tools</h2>
-  <div class="card">JIRA, Azure DevOps</div>
+  <h2><i class="fa-solid fa-code"></i>Skills</h2>
+  <div class="card">Selenium, Tosca, Postman, Java, JIRA, Azure DevOps</div>
 </section>
 
 <section id="experience">
-  <h2>Experience</h2>
+  <h2><i class="fa-solid fa-briefcase"></i>Experience</h2>
   <div class="card">
-    <h3>Accenture | Test Analyst</h3>
-    <p>Nov 2022 - Present</p>
+    Accenture | Test Analyst (2022–Present)
   </div>
 </section>
 
 <section id="education">
-  <h2>Education</h2>
-  <div class="card">B.Sc Computer Science (2019–2022)</div>
+  <h2><i class="fa-solid fa-graduation-cap"></i>Education</h2>
+  <div class="card">B.Sc Computer Science</div>
 </section>
 
 <section id="contact">
-  <h2>Get in Touch</h2>
-  <p><i class="fa-solid fa-envelope icon"></i>Email: rajeshdhannana2001@gmail.com</p>
-  <p><i class="fa-solid fa-phone icon"></i>Phone: +91 8106164762</p>
-
-  <p>
-    <i class="fa-brands fa-linkedin icon"></i>
-    <a href="https://www.linkedin.com/in/dhannana-rajesh-985797224" target="_blank">
-      LinkedIn Profile
-    </a>
-  </p>
-
-  <a class="btn" href="mailto:rajeshdhannana2001@gmail.com">
-    <i class="fa-solid fa-paper-plane"></i> Send Email
-  </a>
+  <h2><i class="fa-solid fa-envelope"></i>Contact</h2>
+  <div class="card">
+    Email: rajeshdhannana2001@gmail.com<br>
+    Phone: +91 8106164762
+  </div>
 </section>
 
 <script>
