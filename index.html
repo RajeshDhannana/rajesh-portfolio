@@ -1,34 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rajesh Dhannana Portfolio</title>
+  <title>Rajesh Portfolio</title>
+
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
+      font-family: 'Segoe UI', sans-serif;
+      background: #020617;
       color: white;
     }
 
-    header {
-      text-align: center;
-      padding: 60px 20px;
-      background: #020617;
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 40px;
+      position: sticky;
+      top: 0;
+      background: rgba(2,6,23,0.9);
+      backdrop-filter: blur(10px);
     }
 
-    header h1 {
-      font-size: 40px;
-      margin: 0;
+    nav h2 {
+      color: #38bdf8;
     }
 
-    header p {
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 40px;
+      background: linear-gradient(to right, #020617, #0f172a);
+    }
+
+    .hero-text {
+      max-width: 500px;
+    }
+
+    .hero-text h1 {
+      font-size: 45px;
+    }
+
+    .hero-text span {
+      color: #38bdf8;
+    }
+
+    .hero-text p {
       color: #94a3b8;
-      margin-top: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #38bdf8;
+      color: black;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero img {
+      width: 260px;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    .hero img:hover {
+      transform: scale(1.05);
     }
 
     section {
-      padding: 40px 20px;
-      max-width: 900px;
+      padding: 60px 40px;
+      max-width: 1000px;
       margin: auto;
     }
 
@@ -38,11 +98,17 @@
     }
 
     .skills span {
-      display: inline-block;
       background: #1e293b;
       padding: 10px 15px;
       margin: 5px;
       border-radius: 10px;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .skills span:hover {
+      background: #38bdf8;
+      color: black;
     }
 
     .card {
@@ -50,33 +116,51 @@
       padding: 20px;
       margin-top: 15px;
       border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
     }
 
     footer {
       text-align: center;
       padding: 20px;
       background: #020617;
-      margin-top: 30px;
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Rajesh Dhannana</h1>
-  <p>Test Analyst | Automation Engineer | 3+ Years Experience</p>
-</header>
+<!-- NAVBAR -->
+<nav>
+  <h2>Rajesh</h2>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-<section>
-  <h2>About Me</h2>
-  <p>
-    Experienced Test Analyst at Accenture with strong expertise in Selenium,
-    Tosca, API Testing, and Agile methodologies.
-  </p>
-</section>
+<!-- HERO -->
+<div class="hero" id="home">
+  <div class="hero-text">
+    <h1>Hello, I'm <span>Rajesh</span></h1>
+    <h3>Test Analyst | Automation Engineer</h3>
+    <p>
+      3+ years experience in Selenium, Tosca, API Testing, and Agile methodologies.
+    </p>
+    <a href="#contact" class="btn">Contact Me</a>
+  </div>
 
-<section>
+  <!-- IMAGE -->
+  <img src="03.jpg" alt="Profile">
+</div>
+
+<!-- SKILLS -->
+<section id="skills">
   <h2>Skills</h2>
   <div class="skills">
     <span>Selenium</span>
@@ -90,22 +174,24 @@
   </div>
 </section>
 
-<section>
+<!-- PROJECTS -->
+<section id="projects">
   <h2>Projects</h2>
 
   <div class="card">
     <h3>Pfizer F&BO MAPP</h3>
-    <p>Selenium automation for travel & event management system.</p>
+    <p>Automation testing using Selenium, Java, and TestNG.</p>
   </div>
 
   <div class="card">
     <h3>AIOC Init</h3>
-    <p>Tosca automation for internal seat booking application.</p>
+    <p>Tosca automation for internal web applications.</p>
   </div>
 
 </section>
 
-<section>
+<!-- CONTACT -->
+<section id="contact">
   <h2>Contact</h2>
   <p>Email: rajeshdhannana2001@gmail.com</p>
   <p>Phone: +91 8106164762</p>
@@ -117,3 +203,4 @@
 
 </body>
 </html>
+      
