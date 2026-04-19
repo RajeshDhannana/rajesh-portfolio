@@ -36,7 +36,7 @@
       border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
-      z-index: 2000; /* FIXED */
+      z-index: 2000;
     }
 
     .right-controls {
@@ -58,15 +58,12 @@
       cursor: pointer;
     }
 
-    /* FULL SCREEN MENU FIX */
     .menu {
       display: none;
       flex-direction: column;
-      position: fixed; /* FIXED */
-      top: 60px;
+      position: fixed;
       left: 0;
       width: 100%;
-      height: calc(100vh - 60px); /* FIXED */
       background: var(--card);
       z-index: 1500;
       overflow-y: auto;
@@ -77,7 +74,6 @@
       text-decoration: none;
       color: var(--text);
       border-bottom: 1px solid var(--border);
-      font-size: 16px;
     }
 
     .menu a:hover {
@@ -132,7 +128,7 @@
 
 <body>
 
-<nav>
+<nav id="navbar">
   <h3>Rajesh</h3>
 
   <div class="right-controls">
@@ -141,7 +137,6 @@
   </div>
 </nav>
 
-<!-- FULL SCREEN MENU -->
 <div id="menu" class="menu">
   <a href="#summary">Summary</a>
   <a href="#skills">Skills</a>
@@ -214,22 +209,27 @@
 <script>
 const menu = document.getElementById("menu");
 const btn = document.getElementById("themeBtn");
+const navbar = document.getElementById("navbar");
 
 function toggleMenu() {
-  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+  if (menu.style.display === "flex") {
+    menu.style.display = "none";
+  } else {
+    const navHeight = navbar.offsetHeight;
+    menu.style.top = navHeight + "px";
+    menu.style.height = "calc(100vh - " + navHeight + "px)";
+    menu.style.display = "flex";
+  }
 }
 
-/* CLOSE MENU WHEN CLICKING OUTSIDE */
+/* CLOSE MENU WHEN CLICK OUTSIDE */
 document.addEventListener("click", function(e) {
-  const isMenu = menu.contains(e.target);
-  const isButton = e.target.classList.contains("menu-btn");
-
-  if (!isMenu && !isButton) {
+  if (!menu.contains(e.target) && !e.target.classList.contains("menu-btn")) {
     menu.style.display = "none";
   }
 });
 
-/* CLOSE MENU WHEN CLICKING LINK */
+/* CLOSE MENU ON LINK CLICK */
 document.querySelectorAll("#menu a").forEach(link => {
   link.addEventListener("click", () => {
     menu.style.display = "none";
