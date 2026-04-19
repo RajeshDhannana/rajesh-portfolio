@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Rajesh Portfolio</title>
+  <title>Rajesh Dhannana | QA Automation Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="QA Automation Engineer with 3+ years experience in Selenium, Tosca, API Testing">
+  <meta name="keywords" content="Selenium, Tosca, QA Engineer, Automation Testing, API Testing, TestNG, Java">
 
   <style>
     :root {
@@ -17,7 +20,6 @@
       --bg: #f8fafc;
       --text: #0f172a;
       --card: #e2e8f0;
-      --border: #cbd5f5;
     }
 
     body {
@@ -31,17 +33,13 @@
     nav {
       display: flex;
       justify-content: space-between;
-      padding: 15px 25px;
-      background: rgba(15,23,42,0.9);
-      backdrop-filter: blur(10px);
+      padding: 15px 20px;
       position: sticky;
       top: 0;
+      background: var(--bg);
     }
 
-    nav h2 {
-      color: var(--accent);
-      margin: 0;
-    }
+    nav h2 { color: var(--accent); }
 
     nav button {
       background: var(--card);
@@ -50,44 +48,32 @@
       padding: 6px 12px;
       border-radius: 6px;
       cursor: pointer;
+      font-size: 16px;
     }
 
     .hero {
       text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(135deg, #020617, #0f172a);
+      padding: 50px 20px;
+      background: linear-gradient(135deg,#020617,#0f172a);
     }
 
     .hero img {
-      width: 160px;
+      width: 140px;
       border-radius: 50%;
       border: 3px solid var(--accent);
-      box-shadow: 0 0 20px rgba(56,189,248,0.4);
     }
 
-    .hero h1 {
-      margin-top: 15px;
-      font-size: 28px;
-    }
-
-    .hero span {
-      color: var(--accent);
-    }
-
-    .hero p {
-      color: #94a3b8;
-      font-size: 14px;
-    }
+    .hero span { color: var(--accent); }
 
     .btn {
-      margin-top: 15px;
-      padding: 10px 20px;
+      display:inline-block;
+      margin-top:15px;
+      padding:10px 20px;
       background: var(--accent);
-      color: black;
-      border-radius: 8px;
-      text-decoration: none;
-      display: inline-block;
-      font-weight: bold;
+      color:black;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:bold;
     }
 
     section {
@@ -107,7 +93,6 @@
       margin: 5px;
       display: inline-block;
       border-radius: 8px;
-      border: 1px solid var(--border);
     }
 
     .card {
@@ -115,19 +100,13 @@
       padding: 15px;
       margin-top: 10px;
       border-radius: 10px;
-      border: 1px solid var(--border);
     }
+
+    ul { padding-left: 20px; }
 
     .link {
       color: var(--accent);
       text-decoration: none;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 13px;
-      color: #94a3b8;
     }
   </style>
 </head>
@@ -136,40 +115,72 @@
 
 <nav>
   <h2>Rajesh</h2>
-  <button onclick="toggleMode()">🌙 / ☀️</button>
+  <button id="themeBtn" onclick="toggleMode()">🌙</button>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
-  <img src="03.jpg" alt="Profile">
-  <h1>Hello, I'm <span>Rajesh</span></h1>
-  <h3>Test Analyst | Automation Engineer</h3>
-  <p>3+ years experience in Selenium, Tosca, API Testing</p>
-  <a href="#contact" class="btn">Contact Me</a>
+  <img src="03.jpg">
+  <h1>Rajesh <span>Dhannana</span></h1>
+  <h3>QA Automation Engineer | Selenium | Tosca | API Testing</h3>
+  <p>3+ Years Experience | Accenture</p>
+  <a href="#contact" class="btn">Hire Me</a>
 </div>
 
 <section>
-  <h2>Skills</h2>
+  <h2>Professional Summary</h2>
+  <p>
+    QA Automation Engineer with 3+ years of experience in Manual and Automation Testing.
+    Skilled in Selenium WebDriver, Tosca, API Testing, TestNG, and Agile methodologies.
+  </p>
+</section>
+
+<section>
+  <h2>Technical Skills</h2>
   <div class="skills">
-    <span>Selenium</span>
-    <span>Tosca</span>
+    <span>Selenium WebDriver</span>
+    <span>Tosca Automation</span>
     <span>Java</span>
     <span>TestNG</span>
-    <span>Postman</span>
-    <span>JIRA</span>
+    <span>API Testing (Postman)</span>
     <span>Azure DevOps</span>
+    <span>JIRA</span>
+    <span>SQL</span>
+  </div>
+</section>
+
+<section>
+  <h2>Professional Experience</h2>
+  <div class="card">
+    <h3>Accenture | Test Analyst</h3>
+    <p>Nov 2022 – Present</p>
+    <ul>
+      <li>Automation using Selenium & Tosca</li>
+      <li>API testing using Postman</li>
+      <li>Regression & Cross-browser testing</li>
+      <li>Defect tracking using JIRA & Azure DevOps</li>
+    </ul>
   </div>
 </section>
 
 <section>
   <h2>Projects</h2>
+
   <div class="card">
     <h3>Pfizer F&BO MAPP</h3>
-    <p>Selenium automation for travel management system.</p>
+    <p>Selenium Automation for travel and event management system</p>
   </div>
 
   <div class="card">
     <h3>AIOC Init</h3>
-    <p>Tosca automation for internal applications.</p>
+    <p>Tosca Automation for internal applications</p>
+  </div>
+</section>
+
+<section>
+  <h2>Certifications</h2>
+  <div class="card">
+    Tosca Automation Specialist Level 1 & Level 2
   </div>
 </section>
 
@@ -179,20 +190,24 @@
   <p>Phone: +91 8106164762</p>
 
   <p>
-    LinkedIn: 
-    <a class="link" href="https://www.linkedin.com/in/dhannana-rajesh-985797224?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">
+    LinkedIn:
+    <a class="link" href="https://www.linkedin.com/in/dhannana-rajesh-985797224" target="_blank">
       Rajesh Dhannana
     </a>
   </p>
 </section>
 
-<footer>
-  © 2026 Rajesh Dhannana
-</footer>
-
 <script>
+const btn = document.getElementById("themeBtn");
+
 function toggleMode() {
   document.body.classList.toggle("light");
+
+  if (document.body.classList.contains("light")) {
+    btn.textContent = "☀️";
+  } else {
+    btn.textContent = "🌙";
+  }
 }
 </script>
 
