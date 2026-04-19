@@ -25,7 +25,6 @@
       font-family: 'Segoe UI', sans-serif;
       background: var(--bg);
       color: var(--text);
-      transition: 0.3s;
     }
 
     nav {
@@ -37,7 +36,7 @@
       border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 2000; /* FIXED */
     }
 
     .right-controls {
@@ -59,22 +58,26 @@
       cursor: pointer;
     }
 
+    /* FULL SCREEN MENU FIX */
     .menu {
       display: none;
       flex-direction: column;
-      position: absolute;
+      position: fixed; /* FIXED */
       top: 60px;
       left: 0;
       width: 100%;
+      height: calc(100vh - 60px); /* FIXED */
       background: var(--card);
-      border-top: 1px solid var(--border);
+      z-index: 1500;
+      overflow-y: auto;
     }
 
     .menu a {
-      padding: 12px 20px;
+      padding: 15px 20px;
       text-decoration: none;
       color: var(--text);
       border-bottom: 1px solid var(--border);
+      font-size: 16px;
     }
 
     .menu a:hover {
@@ -138,6 +141,7 @@
   </div>
 </nav>
 
+<!-- FULL SCREEN MENU -->
 <div id="menu" class="menu">
   <a href="#summary">Summary</a>
   <a href="#skills">Skills</a>
@@ -215,6 +219,7 @@ function toggleMenu() {
   menu.style.display = menu.style.display === "flex" ? "none" : "flex";
 }
 
+/* CLOSE MENU WHEN CLICKING OUTSIDE */
 document.addEventListener("click", function(e) {
   const isMenu = menu.contains(e.target);
   const isButton = e.target.classList.contains("menu-btn");
@@ -224,12 +229,14 @@ document.addEventListener("click", function(e) {
   }
 });
 
+/* CLOSE MENU WHEN CLICKING LINK */
 document.querySelectorAll("#menu a").forEach(link => {
   link.addEventListener("click", () => {
     menu.style.display = "none";
   });
 });
 
+/* THEME TOGGLE */
 function toggleMode() {
   document.body.classList.toggle("light");
 
