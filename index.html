@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    /* 🌙 DARK THEME (DEFAULT - PREMIUM SOFT) */
     :root {
       --bg: #0b1220;
       --text: #e5e7eb;
@@ -14,7 +13,6 @@
       --border: #1f2937;
     }
 
-    /* ☀️ LIGHT THEME (SOFT WHITE) */
     body.light {
       --bg: #f9fafb;
       --text: #111827;
@@ -37,6 +35,9 @@
       align-items: center;
       background: var(--bg);
       border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .right-controls {
@@ -207,12 +208,27 @@
 </section>
 
 <script>
+const menu = document.getElementById("menu");
+const btn = document.getElementById("themeBtn");
+
 function toggleMenu() {
-  const menu = document.getElementById("menu");
   menu.style.display = menu.style.display === "flex" ? "none" : "flex";
 }
 
-const btn = document.getElementById("themeBtn");
+document.addEventListener("click", function(e) {
+  const isMenu = menu.contains(e.target);
+  const isButton = e.target.classList.contains("menu-btn");
+
+  if (!isMenu && !isButton) {
+    menu.style.display = "none";
+  }
+});
+
+document.querySelectorAll("#menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    menu.style.display = "none";
+  });
+});
 
 function toggleMode() {
   document.body.classList.toggle("light");
