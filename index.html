@@ -4,7 +4,6 @@
   <title>Rajesh Dhannana | QA Automation Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- ICONS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -41,7 +40,6 @@
       z-index: 2000;
       background: var(--bg);
       border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(10px);
     }
 
     .right-controls {
@@ -49,10 +47,7 @@
       gap: 10px;
     }
 
-    .menu-btn {
-      font-size: 22px;
-      cursor: pointer;
-    }
+    .menu-btn { cursor: pointer; font-size: 22px; }
 
     .theme-btn {
       padding: 6px 10px;
@@ -60,7 +55,6 @@
       border: 1px solid var(--border);
       background: var(--card);
       color: var(--text);
-      cursor: pointer;
     }
 
     .menu {
@@ -72,18 +66,16 @@
       background: var(--card);
       z-index: 1500;
       transform: translateY(-100%);
-      transition: transform 0.3s ease;
+      transition: 0.3s;
     }
 
-    .menu.open {
-      transform: translateY(0);
-    }
+    .menu.open { transform: translateY(0); }
 
     .menu a {
-      padding: 15px 20px;
-      text-decoration: none;
-      color: var(--text);
+      padding: 15px;
       border-bottom: 1px solid var(--border);
+      color: var(--text);
+      text-decoration: none;
     }
 
     .hero {
@@ -97,34 +89,17 @@
       border: 3px solid var(--accent);
     }
 
-    .hero span {
+    .typing {
       color: var(--accent);
+      font-weight: bold;
     }
 
-    /* HIGHLIGHT STATS */
-    .stats {
+    .highlights {
       display: flex;
-      justify-content: space-around;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .stat-box {
-      background: var(--card);
-      padding: 15px;
-      border-radius: 10px;
-      width: 30%;
-      border: 1px solid var(--border);
-      transition: transform 0.3s;
-    }
-
-    .stat-box:hover {
-      transform: translateY(-5px);
-    }
-
-    .stat-box i {
-      font-size: 24px;
-      color: var(--accent);
+      justify-content: center;
+      gap: 20px;
+      margin-top: 15px;
+      flex-wrap: wrap;
     }
 
     section {
@@ -133,17 +108,12 @@
       margin: auto;
       opacity: 0;
       transform: translateY(30px);
-      transition: all 0.6s ease;
+      transition: 0.6s;
     }
 
     section.show {
       opacity: 1;
       transform: translateY(0);
-    }
-
-    h2 i {
-      margin-right: 10px;
-      color: var(--accent);
     }
 
     .card {
@@ -152,11 +122,24 @@
       margin-top: 10px;
       border-radius: 10px;
       border: 1px solid var(--border);
-      transition: transform 0.3s;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
+    /* SKILL BARS */
+    .skill {
+      margin: 10px 0;
+    }
+
+    .bar {
+      height: 8px;
+      background: var(--border);
+      border-radius: 5px;
+    }
+
+    .fill {
+      height: 8px;
+      background: var(--accent);
+      width: 0;
+      border-radius: 5px;
     }
 
     .btn {
@@ -175,9 +158,8 @@
 
 <nav id="navbar">
   <h3>Rajesh</h3>
-
   <div class="right-controls">
-    <button id="themeBtn" class="theme-btn" onclick="toggleMode()">🌙</button>
+    <button id="themeBtn" onclick="toggleMode()">🌙</button>
     <span class="menu-btn" onclick="toggleMenu()">☰</span>
   </div>
 </nav>
@@ -185,108 +167,92 @@
 <div id="menu" class="menu">
   <a href="#summary">Summary</a>
   <a href="#skills">Skills</a>
-  <a href="#experience">Experience</a>
-  <a href="#education">Education</a>
+  <a href="#projects">Projects</a>
   <a href="#contact">Contact</a>
 </div>
 
 <div class="hero">
   <img src="03.jpg">
-  <h1>Rajesh <span>Dhannana</span></h1>
-  <p>QA Automation Engineer</p>
-  <p><b>Looking for opportunities</b></p>
+  <h1>Rajesh Dhannana</h1>
+  <p class="typing" id="typing"></p>
 
-  <a class="btn" href="resume.pdf" download>
-    <i class="fa-solid fa-download"></i> Download Resume
-  </a>
-</div>
+  <div class="highlights">
+    <span>💼 <b id="exp">0</b>+ Years</span>
+    <span>📜 <b id="cert">0</b> Certifications</span>
+  </div>
 
-<!-- STATS -->
-<div class="stats">
-  <div class="stat-box">
-    <i class="fa-solid fa-briefcase"></i>
-    <h3>3+ Years</h3>
-    <p>Experience</p>
-  </div>
-  <div class="stat-box">
-    <i class="fa-solid fa-certificate"></i>
-    <h3>2+</h3>
-    <p>Certifications</p>
-  </div>
-  <div class="stat-box">
-    <i class="fa-solid fa-diagram-project"></i>
-    <h3>Automation</h3>
-    <p>Projects</p>
-  </div>
+  <a class="btn" href="resume.pdf" download>Download Resume</a>
 </div>
 
 <section id="summary">
-  <h2><i class="fa-solid fa-user"></i>Summary</h2>
-  <p>QA Automation Engineer with 3+ years experience in Selenium, Tosca, API testing and Agile.</p>
+  <h2>Summary</h2>
+  <p>QA Automation Engineer with 3+ years experience in Selenium, Tosca, API testing.</p>
 </section>
 
 <section id="skills">
-  <h2><i class="fa-solid fa-code"></i>Skills</h2>
-  <div class="card">Selenium, Tosca, Postman, Java, JIRA, Azure DevOps</div>
+  <h2>Skills</h2>
+
+  <div class="skill">Selenium<div class="bar"><div class="fill" data-width="90%"></div></div></div>
+  <div class="skill">Tosca<div class="bar"><div class="fill" data-width="85%"></div></div></div>
+  <div class="skill">API Testing<div class="bar"><div class="fill" data-width="80%"></div></div></div>
 </section>
 
-<section id="experience">
-  <h2><i class="fa-solid fa-briefcase"></i>Experience</h2>
-  <div class="card">
-    Accenture | Test Analyst (2022–Present)
-  </div>
-</section>
-
-<section id="education">
-  <h2><i class="fa-solid fa-graduation-cap"></i>Education</h2>
-  <div class="card">B.Sc Computer Science</div>
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="card">Automation Framework Development</div>
+  <div class="card">API Testing Suite</div>
 </section>
 
 <section id="contact">
-  <h2><i class="fa-solid fa-envelope"></i>Contact</h2>
+  <h2>Contact</h2>
   <div class="card">
-    Email: rajeshdhannana2001@gmail.com<br>
-    Phone: +91 8106164762
+    <p>Email: rajeshdhannana2001@gmail.com</p>
+    <a class="btn" href="mailto:rajeshdhannana2001@gmail.com">Send Email</a>
   </div>
 </section>
 
 <script>
-const menu = document.getElementById("menu");
-const navbar = document.getElementById("navbar");
-const btn = document.getElementById("themeBtn");
-
-function toggleMenu() {
-  const navHeight = navbar.offsetHeight;
-  menu.style.top = navHeight + "px";
-  menu.style.height = "calc(100vh - " + navHeight + "px)";
-  menu.classList.toggle("open");
+/* MENU */
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("open");
 }
 
-document.addEventListener("click", function(e) {
-  if (!menu.contains(e.target) && !e.target.classList.contains("menu-btn")) {
-    menu.classList.remove("open");
-  }
-});
-
-document.querySelectorAll("#menu a").forEach(link => {
-  link.addEventListener("click", () => {
-    menu.classList.remove("open");
-  });
-});
-
-function toggleMode() {
+/* THEME */
+function toggleMode(){
   document.body.classList.toggle("light");
-  btn.textContent = document.body.classList.contains("light") ? "☀️" : "🌙";
 }
+
+/* TYPING */
+const text="QA Automation Engineer | Selenium | Tosca | API Testing";
+let i=0;
+function typing(){
+  if(i<text.length){
+    document.getElementById("typing").innerHTML+=text.charAt(i);
+    i++; setTimeout(typing,50);
+  }
+}
+typing();
+
+/* COUNT UP */
+let exp=0,cert=0;
+let interval=setInterval(()=>{
+  if(exp<3) exp++;
+  if(cert<2) cert++;
+  document.getElementById("exp").innerText=exp;
+  document.getElementById("cert").innerText=cert;
+  if(exp===3 && cert===2) clearInterval(interval);
+},500);
 
 /* SCROLL ANIMATION */
-const sections = document.querySelectorAll("section");
-window.addEventListener("scroll", () => {
-  sections.forEach(sec => {
-    const top = sec.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
+window.addEventListener("scroll",()=>{
+  document.querySelectorAll("section").forEach(sec=>{
+    if(sec.getBoundingClientRect().top<window.innerHeight-100){
       sec.classList.add("show");
     }
+  });
+
+  document.querySelectorAll(".fill").forEach(bar=>{
+    bar.style.width=bar.dataset.width;
   });
 });
 </script>
